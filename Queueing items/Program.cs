@@ -32,7 +32,7 @@ do
         case "3":
          Peek();
             break;
-        case "4": GetAllElement();
+        case "4": GetAll();
             break;
         case "5": Environment.Exit(0);
             break;
@@ -51,7 +51,9 @@ void Queue()
         Console.WriteLine(" \n");
         persone.Enqueue(elementoQueue);
         Console.WriteLine($"L'elemento {elementoQueue} è stato accodato con successo!\n");
-    }
+        GetAll();
+        Console.WriteLine("\n");
+}
 
 
     void Dequeue()
@@ -60,7 +62,9 @@ void Queue()
         {
             string elementoDequeue = persone.Dequeue();
             Console.WriteLine($"L'elemento {elementoDequeue} è stato eliminato con successo!\n");
-        }
+            GetAll();
+            Console.WriteLine("\n");
+    }
         else
         {
             Console.WriteLine("La coda è vuota. Impossibile eliminare\n");
@@ -80,7 +84,7 @@ void Queue()
         };
     }
 
-    void GetAllElement()
+    void GetAll()
     {
     if (persone.Count > 0)
     {
@@ -91,12 +95,13 @@ void Queue()
         foreach (string elementAll in copiaQueue)
         {
             Console.WriteLine(elementAll + "\n");
+            
         }
     } 
     else 
     {
         Console.WriteLine("La coda è vuota\n");
     }
-}
+    }
 
 
